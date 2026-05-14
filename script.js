@@ -1,8 +1,3 @@
-/* 
-   MÁYFM TÍNH - CALCULATOR LOGIC
-   JavaScript Code với logic sạch, không thừa không thiếu
-*/
-
 const calculator = {
     /*
      * PHẦN DỮ LIỆU - DATA PROPERTIES
@@ -19,7 +14,7 @@ const calculator = {
 
     /*
      * GỌI CÁC PHẦN TỬ DOM
-     * Lưu trữ các thẻ HTML để sử dụng liên tục
+        * expressionDisplay: Nơi hiển thị biểu thức (previousValue + operator)
      */
     elements: {
         expressionDisplay: document.getElementById('expressionDisplay'),
@@ -36,8 +31,6 @@ const calculator = {
     },
 
     /*
-     * PHƯƠNG THỨC: KHỞI TẠO
-     * 
      * Chức năng: Gắn các event listener cho các nút
      * Giải thích: Khi người dùng click nút, sẽ gọi hàm tương ứng
      */

@@ -87,7 +87,7 @@ body {
     border-bottom: 2px solid #e9ecef;
 }
 
-/* Hiển thị biểu thức (dòng trên, màu nhạt) */
+/* Hiển thị biểu thức*/
 .display-expression {
     text-align: right;
     font-size: 14px;
