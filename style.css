@@ -1,0 +1,279 @@
+/* 
+   GIAO DIỆN MÁY TÍNH
+*/
+
+/* Reset và cấu hình cơ bản cho toàn bộ trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Cấu hình font chữ */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    
+    /* Thiết lập background gradient (nền gradient từ xanh lam sang xanh lục) */
+    background: linear-gradient(135deg, #ffffff 0%, #9e9d9f 100%);
+    
+    /* Chiều cao tối thiểu là 100% viewport height */
+    min-height: 100vh;
+    
+    /* Căn giữa nội dung */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Thêm padding để có khoảng trống */
+    padding: 20px;
+}
+
+.calculator-container {
+    /* Độ rộng tối đa */
+    width: 100%;
+    max-width: 400px;
+    
+    /* Bóng đổ để tạo chiều sâu */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    
+    /* Bo góc */
+    border-radius: 20px;
+    
+    /* Màu nền trắng */
+    background: white;
+    
+    /* Overflow ẩn để các phần tử con không vượt ra ngoài */
+    overflow: hidden;
+    
+    /* Animation khi load */
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Animation*/
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculator-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.calculator-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.calculator-header .subtitle {
+    font-size: 12px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.calculator-display {
+    background: #f8f9fa;
+    padding: 20px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Hiển thị biểu thức (dòng trên, màu nhạt) */
+.display-expression {
+    text-align: right;
+    font-size: 14px;
+    color: #999;
+    height: 20px;
+    margin-bottom: 10px;
+    min-height: 20px;
+}
+
+/* Hiển thị kết quả (dòng dưới, lớn và đậm) */
+.display-result {
+    text-align: right;
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    min-height: 45px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.calculator-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Mỗi hàng nút */
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Nút với kích thước nửa rộng (để số 0 chiếm 2 cột) */
+.button-row .btn-zero {
+    grid-column: span 2;
+}
+
+.btn {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* Tránh chọn văn bản khi click */
+    user-select: none;
+    
+    
+    -webkit-user-select: none;
+}
+
+/* Nút số (0-9) */
+.btn-number {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-number:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-number:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút toán tử (+, -, ×, ÷) */
+.btn-operator {
+    background: #667eea;
+    color: white;
+    border: none;
+}
+
+.btn-operator:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-operator:active {
+    transform: translateY(0);
+    background: #4a5ab8;
+}
+
+/* Nút chức năng (AC, DEL, x², √, %,+/−) */
+.btn-function {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+}
+
+.btn-function:hover {
+    background: #ee5a52;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btn-function:active {
+    transform: translateY(0);
+    background: #dd4444;
+}
+
+/* Nút bằng (=) */
+.btn-equals {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    grid-column: span 1;
+    font-size: 18px;
+}
+
+.btn-equals:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-equals:active {
+    transform: translateY(0);
+}
+
+
+.calculator-footer {
+    background: #f8f9fa;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    font-size: 12px;
+    color: #999;
+}
+
+/*RESPONSIVE DESIGN - CHO CÁC THIẾT BỊ KHÁC NHAU*/
+
+/* Điện thoại nhỏ (dưới 480px) */
+@media (max-width: 480px) {
+    .calculator-container {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .display-result {
+        font-size: 28px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Tablet (480px - 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .calculator-container {
+        max-width: 95%;
+    }
+}
+
+/* 
+   ACCESSIBILITY - KHẢ NĂNG TRUY CẬP*/
+
+/* Focus state cho keyboard navigation */
+.btn:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Disabled state (nếu cần) */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}

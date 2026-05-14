@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính - Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container chính của ứng dụng -->
+    <div class="calculator-container">
+        <!-- Header hiển thị tiêu đề -->
+        <div class="calculator-header">
+            <h1>Máy Tính</h1>
+            <p class="subtitle">Máy tính khoa học cho học sinh</p>
+        </div>
+
+        <!-- Màn hình hiển thị -->
+        <div class="calculator-display">
+            <!-- Hiển thị biểu thức nhập vào (ở trên) -->
+            <div class="display-expression" id="expressionDisplay">0</div>
+            <!-- Hiển thị kết quả (ở dưới, chính) -->
+            <div class="display-result" id="resultDisplay">0</div>
+        </div>
+
+        <!-- Phần nhập liệu và các nút -->
+        <div class="calculator-body">
+            <!-- Hàng 1: Nút xóa và phép toán cơ bản -->
+            <div class="button-row">
+                <button class="btn btn-function" id="clearBtn">AC</button>
+                <button class="btn btn-function" id="deleteBtn">DEL</button>
+                <button class="btn btn-operator" data-operator="÷">÷</button>
+                <button class="btn btn-operator" data-operator="×">×</button>
+            </div>
+
+            <!-- Hàng 2: Số 7, 8, 9 và phép trừ -->
+            <div class="button-row">
+                <button class="btn btn-number" data-number="7">7</button>
+                <button class="btn btn-number" data-number="8">8</button>
+                <button class="btn btn-number" data-number="9">9</button>
+                <button class="btn btn-operator" data-operator="-">−</button>
+            </div>
+
+            <!-- Hàng 3: Số 4, 5, 6 và phép cộng -->
+            <div class="button-row">
+                <button class="btn btn-number" data-number="4">4</button>
+                <button class="btn btn-number" data-number="5">5</button>
+                <button class="btn btn-number" data-number="6">6</button>
+                <button class="btn btn-operator" data-operator="+">+</button>
+            </div>
+
+            <!-- Hàng 4: Số 1, 2, 3 và phép nhân -->
+            <div class="button-row">
+                <button class="btn btn-number" data-number="1">1</button>
+                <button class="btn btn-number" data-number="2">2</button>
+                <button class="btn btn-number" data-number="3">3</button>
+                <button class="btn btn-operator" data-operator="×">×</button>
+            </div>
+
+            <!-- Hàng 5: Số 0, dấu phẩy và nút bằng -->
+            <div class="button-row">
+                <button class="btn btn-number btn-zero" data-number="0">0</button>
+                <button class="btn btn-number" data-number=".">.</button>
+                <button class="btn btn-equals" id="equalsBtn">=</button>
+            </div>
+
+            <!-- Hàng 6: Các nút nâng cao -->
+            <div class="button-row">
+                <button class="btn btn-function" id="squareBtn">x²</button>
+                <button class="btn btn-function" id="sqrtBtn">√</button>
+                <button class="btn btn-function" id="percentBtn">%</button>
+                <button class="btn btn-function" id="toggleSignBtn">+/−</button>
+            </div>
+        </div>
+
+        <!-- Footer hiển thị thông tin -->
+        <div class="calculator-footer">
+            <p>Phiên bản 1.0 | Thiết kế cho học sinh</p>
+        </div>
+    </div>
+
+    <!-- Script chính -->
+    <script src="script.js"></script>
+</body>
+</html>
