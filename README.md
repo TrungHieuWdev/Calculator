@@ -5,6 +5,8 @@ Modern calculator application designed for students with a clean and responsive 
 A simple scientific calculator built using pure front-end technologies.  
 The project focuses on user-friendly design, smooth interaction, and responsive layout.
 
+Calcultor: https://trunghieuwdev.github.io/Calculator/
+
 ## Features
 - Basic arithmetic operations
 - Square calculation (x²)
@@ -31,6 +33,3 @@ This project was created to practice front-end development skills and improve UI
 ## Author
 Trung Hieu
 GitHub: https://github.com/TrungHieuWdev
-
-
-Calcultor: https://trunghieuwdev.github.io/Calculator/
